@@ -5,7 +5,6 @@ LearnTrack is a console-based application developed using Core Java. I built thi
 
 The system allows basic management of students, courses, and enrollments through a menu-driven interface. The main goal was to apply concepts like OOP, collections, and exception handling in a practical way.
 
----
 
 ## Features
 
@@ -25,7 +24,6 @@ The system allows basic management of students, courses, and enrollments through
 - View all enrollments
 - Update enrollment status (ACTIVE, COMPLETED, CANCELLED)
 
----
 
 ## What I Learned
 While working on this project, I got hands-on experience with:
@@ -39,7 +37,6 @@ While working on this project, I got hands-on experience with:
 - Handling errors using try-catch and custom exceptions
 - Organizing code into layers (UI, Service, Repository)
 
----
 
 ## Project Structure
 The project is divided into multiple packages to keep the code clean and organized:
@@ -53,25 +50,31 @@ The project is divided into multiple packages to keep the code clean and organiz
 - constants – Stores application constants  
 - enums – Contains fixed values like EnrollmentStatus  
 
----
 
 ## How to Run
 
-Compile the project:
-javac src/com/airtribe/learntrack/Main.java
+### Option 1 (Recommended)
+- Open the project in VS Code
+- Open Main.java
+- Click the Run button
 
-Run the application:
-java -cp src com.airtribe.learntrack.Main
+### Option 2 (Using Terminal)
 
----
+cd src  
+javac -d .. (Get-ChildItem -Recurse -Filter *.java).FullName  
+cd ..  
+java com.airtribe.learntrack.Main  
+
+Note: Since the project uses multiple packages, all files need to be compiled together.
 
 ## Notes
 - This project uses in-memory storage, so data will reset when the program is restarted  
 - The focus of this project is on learning core Java concepts, not database integration  
 
----
 
 
 ![alt text](EntityRelation_Diagram.png)
+
+
 ## Author
 Niha2048
