@@ -67,13 +67,13 @@ The project is divided into multiple packages to keep the code clean and organiz
 
 This diagram represents the overall structure of my LearnTrack system.
 
-# Entities
+## Entities
 
 At the top, I have a base class called Person which contains common fields like id, firstName, lastName, and email.
 
 Student extends Person, so it inherits these properties and also has additional fields like batch and active status.
 
- # Relationship 
+ ## Relationship 
 
 The main relationship in the system is between Student and Course.
 
@@ -95,7 +95,7 @@ I also created repository classes for each entity to store data in memory using 
 
 This helps in separating data storage from business logic.
 
-# Design Decision
+## Design Decision
 
 Overall, I followed a layered architecture with entity, repository, and service layers to keep the code clean and modular.
 
