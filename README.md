@@ -61,11 +61,38 @@ java -cp src com.airtribe.learntrack.Main
 
 ## 📊 Class Diagram (Simplified)
 
-Person
-↑
-Student
-Course
-Enrollment
+           +----------------+
+           |    Person      |
+           +----------------+
+           | id             |
+           | firstName      |
+           | lastName       |
+           | email          |
+           +----------------+
+                    ▲
+                    |
+           +----------------+
+           |    Student     |
+           +----------------+
+           | batch          |
+           | active         |
+           +----------------+
+
++----------------+       +----------------+
+|    Course      |       |  Enrollment    |
++----------------+       +----------------+
+| id             |       | id             |
+| name           |       | studentId      |
+| duration       |       | courseId       |
+| active         |       | status         |
++----------------+       +----------------+
+
+Repositories:
+StudentRepository
+CourseRepository
+EnrollmentRepository
+
+Services:
 StudentService → StudentRepository
 CourseService → CourseRepository
 EnrollmentService → EnrollmentRepository
