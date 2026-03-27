@@ -63,7 +63,41 @@ The project is divided into multiple packages to keep the code clean and organiz
 
 
 
-![alt text](EntityRelation_Diagram.png)
+![alt text](ERD.jpg)
+
+This diagram represents the overall structure of my LearnTrack system.
+
+# Entities
+
+At the top, I have a base class called Person which contains common fields like id, firstName, lastName, and email.
+
+Student extends Person, so it inherits these properties and also has additional fields like batch and active status.
+
+ # Relationship 
+
+The main relationship in the system is between Student and Course.
+
+A student can enroll in multiple courses, and a course can have multiple students.
+
+So instead of directly connecting them, I created an Enrollment class to handle this many-to-many relationship.
+
+Each Enrollment stores studentId, courseId, enrollmentDate, and status.
+
+ Service Layer
+
+Below that, I have service classes like StudentService, CourseService, and EnrollmentService.
+
+These classes contain the business logic, such as adding students, creating courses, and enrolling students.
+
+Repository Layer
+
+I also created repository classes for each entity to store data in memory using ArrayList.
+
+This helps in separating data storage from business logic.
+
+# Design Decision
+
+Overall, I followed a layered architecture with entity, repository, and service layers to keep the code clean and modular.
 
 
 ## Author
