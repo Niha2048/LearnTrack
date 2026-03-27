@@ -53,19 +53,9 @@ The project is divided into multiple packages to keep the code clean and organiz
 
 ## How to Run
 
-### Option 1 (Recommended)
 - Open the project in VS Code
 - Open Main.java
 - Click the Run button
-
-### Option 2 (Using Terminal)
-
-cd src  
-javac -d .. (Get-ChildItem -Recurse -Filter *.java).FullName  
-cd ..  
-java com.airtribe.learntrack.Main  
-
-Note: Since the project uses multiple packages, all files need to be compiled together.
 
 ## Notes
 - This project uses in-memory storage, so data will reset when the program is restarted  
