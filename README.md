@@ -1,118 +1,77 @@
 # LearnTrack - Student & Course Management System
 
-## 📌 Project Overview
-LearnTrack is a console-based application built using Core Java. It allows users to manage Students, Courses, and Enrollments through a menu-driven interface.
+## About the Project
+LearnTrack is a console-based application developed using Core Java. I built this project to practice Java fundamentals and understand how to structure a real-world application.
 
-This project demonstrates strong fundamentals of Java including OOP principles, collections, exception handling, and clean architecture.
+The system allows basic management of students, courses, and enrollments through a menu-driven interface. The main goal was to apply concepts like OOP, collections, and exception handling in a practical way.
 
 ---
 
-## 🚀 Features
+## Features
 
-### 👨‍🎓 Student Management
-- Add new student
+### Student Management
+- Add a new student
 - View all students
-- Search student by ID
-- Deactivate student
+- Search a student using ID
+- Deactivate a student instead of deleting
 
-### 📚 Course Management
-- Add new course
+### Course Management
+- Add a new course
 - View all courses
-- Deactivate course
+- Deactivate a course
 
-### 📋 Enrollment Management
-- Enroll student into a course
+### Enrollment Management
+- Enroll a student into a course
 - View all enrollments
 - Update enrollment status (ACTIVE, COMPLETED, CANCELLED)
 
 ---
 
-## 🛠️ Technologies Used
-- Core Java
-- OOP (Encapsulation, Inheritance, Polymorphism)
-- ArrayList (Collections)
-- Exception Handling
+## What I Learned
+While working on this project, I got hands-on experience with:
+
+- Writing clean and structured Java code
+- Using classes and objects effectively
+- Applying inheritance (Student extends Person)
+- Encapsulation using private fields and getters/setters
+- Basic polymorphism using method overriding
+- Working with ArrayList for dynamic data storage
+- Handling errors using try-catch and custom exceptions
+- Organizing code into layers (UI, Service, Repository)
 
 ---
 
-## 📂 Project Structure
-src/com/airtribe/learntrack/
-│
-├── Main.java
-├── entity/
-├── repository/
-├── service/
-├── exception/
-├── util/
-├── constants/
-├── enums/
+## Project Structure
+The project is divided into multiple packages to keep the code clean and organized:
+
+- Main.java – Entry point of the application  
+- entity – Contains model classes like Student, Course, and Enrollment  
+- repository – Handles in-memory data storage using ArrayList  
+- service – Contains business logic  
+- exception – Custom exception classes  
+- util – Utility classes like IdGenerator  
+- constants – Stores application constants  
+- enums – Contains fixed values like EnrollmentStatus  
 
 ---
 
-## ▶️ How to Run
+## How to Run
 
-### Compile:
+Compile the project:
 javac src/com/airtribe/learntrack/Main.java
 
-### Run:
+Run the application:
 java -cp src com.airtribe.learntrack.Main
 
 ---
 
-## 📊 Class Diagram (Simplified)
-
-           +----------------+
-           |    Person      |
-           +----------------+
-           | id             |
-           | firstName      |
-           | lastName       |
-           | email          |
-           +----------------+
-                    ▲
-                    |
-           +----------------+
-           |    Student     |
-           +----------------+
-           | batch          |
-           | active         |
-           +----------------+
-
-+----------------+       +----------------+
-|    Course      |       |  Enrollment    |
-+----------------+       +----------------+
-| id             |       | id             |
-| name           |       | studentId      |
-| duration       |       | courseId       |
-| active         |       | status         |
-+----------------+       +----------------+
-
-Repositories:
-StudentRepository
-CourseRepository
-EnrollmentRepository
-
-Services:
-StudentService → StudentRepository
-CourseService → CourseRepository
-EnrollmentService → EnrollmentRepository
+## Notes
+- This project uses in-memory storage, so data will reset when the program is restarted  
+- The focus of this project is on learning core Java concepts, not database integration  
 
 ---
 
-## 🎯 Key Concepts Used
-- Encapsulation (private fields + getters/setters)
-- Inheritance (Student extends Person)
-- Polymorphism (method overriding)
-- Static usage (IdGenerator)
-- Layered Architecture (UI → Service → Repository → Entity)
 
----
-
-## 📌 Future Enhancements
-- Database integration (MySQL)
-- GUI (JavaFX / Web UI)
-
----
-
-## 👨‍💻 Author
+![alt text](EntityRelation_Diagram.png)
+## Author
 Niha2048

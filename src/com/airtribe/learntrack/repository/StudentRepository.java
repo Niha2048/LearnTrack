@@ -28,7 +28,6 @@ public class StudentRepository {
         return null; // handled in service layer
     }
 
-    // Update (optional but good)
     public void update(Student updatedStudent) {
         for (int i = 0; i < students.size(); i++) {
             if (students.get(i).getId() == updatedStudent.getId()) {
@@ -37,8 +36,7 @@ public class StudentRepository {
             }
         }
     }
-
-    // Delete (optional, but we prefer deactivate in service)
+ 
     public void delete(int id) {
         students.removeIf(s -> s.getId() == id);
     }
