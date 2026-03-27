@@ -63,7 +63,7 @@ The project is divided into multiple packages to keep the code clean and organiz
 
 
 
-![alt text](ERD.jpg)
+![alt text](ERD-1.jpg)
 
 This diagram represents the overall structure of my LearnTrack system.
 
