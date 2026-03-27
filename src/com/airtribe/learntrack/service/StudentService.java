@@ -36,13 +36,13 @@ public class StudentService {
         return student;
     }
 
-    // Deactivate student (instead of delete)
+    // Deactivate student 
     public void deactivateStudent(int id) {
         Student student = getStudentById(id);
         student.setActive(false);
     }
 
-    // Update student email (example update method)
+    // Update student email 
     public void updateStudentEmail(int id, String newEmail) {
         Student student = getStudentById(id);
         student.setEmail(newEmail);

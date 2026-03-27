@@ -15,7 +15,7 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.0.2+10-LTS-69, mixed mode, sharing)
 
 This confirmed that Java was installed correctly and ready to use.
 
----
+
 
 ## Hello World Program
 
@@ -30,7 +30,7 @@ public class HelloWorld {
     }
 }
 
----
+
 
 ## Compile and Run
 
@@ -42,7 +42,6 @@ Then I ran it using:
 
 java HelloWorld
 
----
 
 ## Output
 
@@ -53,7 +52,6 @@ Hello, World!
 PS C:\Users\tejae\OneDrive\Desktop\Java_Practice> javac .\HelloWorld.java 
 PS C:\Users\tejae\OneDrive\Desktop\Java_Practice> java HelloWorld        
 Hello, World!
----
 
 ## Notes
 
