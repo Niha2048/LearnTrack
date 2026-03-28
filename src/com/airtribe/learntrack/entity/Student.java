@@ -5,14 +5,12 @@ public class Student extends Person {
     private String batch;
     private boolean active;
 
-    // Full constructor
     public Student(int id, String firstName, String lastName, String email, String batch) {
         super(id, firstName, lastName, email);
         this.batch = batch;
         this.active = true;
     }
 
-    // Constructor overloading (without email)
     public Student(int id, String firstName, String lastName, String batch) {
         super(id, firstName, lastName, null);
         this.batch = batch;
@@ -24,7 +22,6 @@ public class Student extends Person {
         return "Student: " + super.getDisplayName();
     }
 
-    // Getters & Setters
     public String getBatch() { return batch; }
     public void setBatch(String batch) { this.batch = batch; }
 

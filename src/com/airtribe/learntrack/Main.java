@@ -6,6 +6,7 @@ import com.airtribe.learntrack.exception.EntityNotFoundException;
 import com.airtribe.learntrack.service.CourseService;
 import com.airtribe.learntrack.service.EnrollmentService;
 import com.airtribe.learntrack.service.StudentService;
+import com.airtribe.learntrack.util.InputValidator;
 import com.airtribe.learntrack.entity.*;
 
 import java.util.List;
@@ -17,7 +18,7 @@ public class Main {
 
     private static final StudentService studentService = new StudentService();
     private static final CourseService courseService = new CourseService();
-    private static final EnrollmentService enrollmentService = new EnrollmentService();
+    private static final EnrollmentService enrollmentService = new EnrollmentService(studentService,courseService);
 
     public static void main(String[] args) {
 
@@ -56,7 +57,6 @@ public class Main {
         }
     }
 
-    // ================= MAIN MENU =================
     private static void showMainMenu() {
         System.out.println("\n===== MAIN MENU =====");
         System.out.println("1. Student Management");
@@ -66,7 +66,6 @@ public class Main {
         System.out.print("Enter choice: ");
     }
 
-    // ================= STUDENT MENU =================
     private static void handleStudentMenu() {
         System.out.println("\n--- Student Menu ---");
         System.out.println("11. Add Student");
@@ -80,17 +79,34 @@ public class Main {
             switch (choice) {
 
                 case MenuOptions.ADD_STUDENT:
+
                     System.out.print("First Name: ");
                     String firstName = scanner.nextLine();
+                    if (!InputValidator.isValidName(firstName)) {
+                        System.out.println("Invalid first name (only letters allowed).");
+                        return;
+                    }
 
                     System.out.print("Last Name: ");
                     String lastName = scanner.nextLine();
+                    if (!InputValidator.isValidName(lastName)) {
+                        System.out.println("Invalid last name (only letters allowed).");
+                        return;
+                    }
 
                     System.out.print("Email: ");
                     String email = scanner.nextLine();
+                    if (!InputValidator.isValidEmail(email)) {
+                        System.out.println("Invalid email format.");
+                        return;
+                    }
 
                     System.out.print("Batch: ");
                     String batch = scanner.nextLine();
+                    if (!InputValidator.isValidBatch(batch)) {
+                        System.out.println("Batch cannot be empty.");
+                        return;
+                    }
 
                     studentService.addStudent(firstName, lastName, email, batch);
                     System.out.println("Student added successfully!");
@@ -126,7 +142,6 @@ public class Main {
         }
     }
 
-    // ================= COURSE MENU =================
     private static void handleCourseMenu() {
         System.out.println("\n--- Course Menu ---");
         System.out.println("21. Add Course");
@@ -139,14 +154,27 @@ public class Main {
             switch (choice) {
 
                 case MenuOptions.ADD_COURSE:
+                    
                     System.out.print("Course Name: ");
                     String name = scanner.nextLine();
+                    if (!InputValidator.isValidCourseName(name)) {
+                        System.out.println("Invalid course name.");
+                        return;
+                    }
 
                     System.out.print("Description: ");
                     String desc = scanner.nextLine();
+                    if (!InputValidator.isNotEmpty(desc)) {
+                        System.out.println("Description cannot be empty.");
+                        return;
+                    }
 
                     System.out.print("Duration (weeks): ");
                     int duration = Integer.parseInt(scanner.nextLine());
+                    if (!InputValidator.isValidDuration(duration)) {
+                        System.out.println("Duration must be positive.");
+                        return;
+                    }
 
                     courseService.addCourse(name, desc, duration);
                     System.out.println("Course added!");
@@ -175,7 +203,6 @@ public class Main {
         }
     }
 
-    // ================= ENROLLMENT MENU =================
     private static void handleEnrollmentMenu() {
         System.out.println("\n--- Enrollment Menu ---");
         System.out.println("31. Enroll Student");
@@ -188,11 +215,20 @@ public class Main {
             switch (choice) {
 
                 case MenuOptions.ENROLL_STUDENT:
+
                     System.out.print("Student ID: ");
                     int studentId = Integer.parseInt(scanner.nextLine());
+                    if (!InputValidator.isValidId(studentId)) {
+                        System.out.println("Invalid student ID.");
+                        return;
+                    }
 
                     System.out.print("Course ID: ");
                     int courseId = Integer.parseInt(scanner.nextLine());
+                    if (!InputValidator.isValidId(courseId)) {
+                        System.out.println("Invalid course ID.");
+                        return;
+                    }
 
                     enrollmentService.enrollStudent(studentId, courseId);
                     System.out.println("Student enrolled!");

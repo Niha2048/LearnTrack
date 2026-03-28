@@ -11,7 +11,6 @@ public class StudentService {
 
     private StudentRepository studentRepository = new StudentRepository();
 
-    // Add student
     public void addStudent(String firstName, String lastName, String email, String batch) {
 
         int id = IdGenerator.getNextStudentId();
@@ -20,12 +19,10 @@ public class StudentService {
         studentRepository.save(student);
     }
 
-    // Get all students
     public List<Student> getAllStudents() {
         return studentRepository.findAll();
     }
 
-    // Get by ID
     public Student getStudentById(int id) {
         Student student = studentRepository.findById(id);
 
@@ -36,13 +33,11 @@ public class StudentService {
         return student;
     }
 
-    // Deactivate student 
     public void deactivateStudent(int id) {
         Student student = getStudentById(id);
         student.setActive(false);
     }
 
-    // Update student email 
     public void updateStudentEmail(int id, String newEmail) {
         Student student = getStudentById(id);
         student.setEmail(newEmail);

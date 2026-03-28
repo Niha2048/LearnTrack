@@ -8,17 +8,14 @@ public class StudentRepository {
 
     private List<Student> students = new ArrayList<>();
 
-    // Save student
     public void save(Student student) {
         students.add(student);
     }
 
-    // Get all students
     public List<Student> findAll() {
         return students;
     }
 
-    // Find by ID
     public Student findById(int id) {
         for (Student s : students) {
             if (s.getId() == id) {

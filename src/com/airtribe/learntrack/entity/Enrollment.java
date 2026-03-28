@@ -18,7 +18,7 @@ public class Enrollment {
         this.status = status;
     }
 
-    // Getters & Setters
+    
     public int getId() { return id; }
 
     public int getStudentId() { return studentId; }

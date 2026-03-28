@@ -25,7 +25,6 @@ public class EnrollmentRepository {
         return null;
     }
 
-    // Get enrollments by student
     public List<Enrollment> findByStudentId(int studentId) {
         List<Enrollment> result = new ArrayList<>();
         for (Enrollment e : enrollments) {
@@ -36,7 +35,6 @@ public class EnrollmentRepository {
         return result;
     }
 
-    // Get enrollments by course
     public List<Enrollment> findByCourseId(int courseId) {
         List<Enrollment> result = new ArrayList<>();
         for (Enrollment e : enrollments) {
